@@ -9,7 +9,7 @@ Pode incluir imagens, diagramas ou links para protótipos, vídeos, wireframes e
 
 - Augusto Miotti - RA: 993187   
 - Felipe Avalon – RA: 1462535  
-- Luiz Otavio Albergoni – RA: 812368
+- Luis Otavio Albergoni – RA: 812368
 - Gabriel Soares - RA: 799686   
 
 ---
