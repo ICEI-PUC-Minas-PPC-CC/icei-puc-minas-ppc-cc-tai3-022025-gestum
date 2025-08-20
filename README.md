@@ -1,4 +1,4 @@
-# 📌 Nome do Projeto
+# 📌 Gestum
 
 Breve descrição do problema identificado e da solução proposta.  
 Pode incluir imagens, diagramas ou links para protótipos, vídeos, wireframes etc.
@@ -7,9 +7,10 @@ Pode incluir imagens, diagramas ou links para protótipos, vídeos, wireframes e
 
 ## 👥 Integrantes
 
-- Nome 1 – RA: XXXXXXXX  
-- Nome 2 – RA: XXXXXXXX  
-- Nome 3 – RA: XXXXXXXX  
+- Augusto Miotti - RA: 993187   
+- Felipe Avalon – RA: 1462535  
+- Luiz Otavio Albergoni – RA: 812368
+- Gabriel Soares - RA: 799686   
 
 ---
 
