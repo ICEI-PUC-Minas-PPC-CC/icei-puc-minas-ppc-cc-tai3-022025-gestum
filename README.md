@@ -29,6 +29,7 @@ Pode incluir imagens, diagramas ou links para protótipos, vídeos, wireframes e
 - Valores:  
 
 ### 3️⃣ Custos e Tributos (Plano de Negócios - PNBOX)
+[Ver Custos e Tributos](docs/custos_estudo.md)
 - Custos fixos:  
 - Custos variáveis:  
 - Tributos aplicáveis:  
