@@ -1,0 +1,14 @@
+| Regime                                           | Base de Cálculo                                          | Tributos Principais                                                | Alíquota Efetiva (aprox.)   |
+|:-------------------------------------------------|:---------------------------------------------------------|:-------------------------------------------------------------------|:----------------------------|
+| Simples Nacional – Anexo V                       | Receita Bruta                                            | DAS (unificado: IRPJ, CSLL, PIS, COFINS, ISS, CPP)                 | ~15,5%                      |
+| Simples Nacional – Anexo III (com Fator R ≥ 28%) | Receita Bruta                                            | DAS                                                                | ~11,2%                      |
+| Lucro Presumido                                  | Receita Bruta (32% presumida p/ IRPJ/CSLL)               | IRPJ, CSLL, PIS (0,65%), COFINS (3%), ISS (2%–5%)                  | ~17,5%                      |
+| Lucro Real                                       | Lucro contábil ajustado + Receita Bruta (PIS/COFINS/ISS) | IRPJ (15% + adicional), CSLL (9%), PIS (1,65%), COFINS (7,6%), ISS | 15%–23% (depende da margem) |
+| Receita Bruta Total da empresa em 12 meses       | Alíquota                                                 | Valor a ser descontado                                             | nan                         |
+| III                                              | nan                                                      | nan                                                                | nan                         |
+| Até R$ 180.000                                   | 0.06                                                     | 0                                                                  | nan                         |
+| De R$ 180.000,01 a R$ 360.000                    | 0.112                                                    | R$ 9.360                                                           | nan                         |
+| De R$ 360.000,01 a R$ 720.000                    | 0.135                                                    | R$ 17.640                                                          | nan                         |
+| De R$ 720.000,01 a R$ 1.800.000                  | 0.16                                                     | R$ 35.640                                                          | nan                         |
+| De R$ 1.800.000,01 a R$ 3.600.000                | 0.21                                                     | R$ 125.640                                                         | nan                         |
+| De R$ 3.600.000,01 a R$ 4.800.000                | 0.33                                                     | R$ 648.000                                                         | nan                         |
