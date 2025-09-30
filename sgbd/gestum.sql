@@ -54,11 +54,11 @@ CREATE TABLE Pessoa_Fisica (
 
 CREATE TABLE Funcionario (
     id_funcionario SERIAL PRIMARY KEY,
-    nome_usuario VARCHAR(30) NOT NULL,
-    contato_usuario CHAR(14) NOT NULL UNIQUE, --celular com DDD
-    email_usuario VARCHAR(50) NOT NULL,
-    perfil_usuario VARCHAR(50) NOT NULL,
-    descricao_usuario TEXT NULL,
+    nome_funcionario VARCHAR(30) NOT NULL,
+    contato_funcionario CHAR(14) NOT NULL UNIQUE, --celular com DDD
+    email_funcionario VARCHAR(50) NOT NULL,
+    perfil_funcionario VARCHAR(50) NOT NULL,
+    descricao_funcionario TEXT NULL,
     ativacao_funcionario TIMESTAMPTZ(0) DEFAULT NOW() NOT NULL,
     atualizacao_funcionario TIMESTAMPTZ(0) DEFAULT NULL,
     desativacao_funcionario TIMESTAMPTZ(0) DEFAULT NULL,
