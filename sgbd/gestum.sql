@@ -16,8 +16,8 @@ CREATE TABLE Plano (
 
 CREATE TABLE Empresa (
     id_empresa SERIAL PRIMARY KEY,
-    razao_social VARCHAR(30) NOT NULL,
-    nome_fantasia VARCHAR(30) NOT NULL,
+    razao_social VARCHAR(50) NOT NULL,
+    nome_fantasia VARCHAR(50) NOT NULL,
     CNPJ CHAR(14) NOT NULL UNIQUE,
     descricao_empresa TEXT NULL,
     ativacao_empresa TIMESTAMPTZ(0) DEFAULT NOW() NOT NULL,
@@ -54,10 +54,9 @@ CREATE TABLE Pessoa_Fisica (
 
 CREATE TABLE Funcionario (
     id_funcionario SERIAL PRIMARY KEY,
-    nome_funcionario VARCHAR(30) NOT NULL,
+    nome_funcionario VARCHAR(50) NOT NULL,
     contato_funcionario CHAR(14) NOT NULL UNIQUE, --celular com DDD
     email_funcionario VARCHAR(50) NOT NULL,
-    perfil_funcionario VARCHAR(50) NOT NULL,
     descricao_funcionario TEXT NULL,
     ativacao_funcionario TIMESTAMPTZ(0) DEFAULT NOW() NOT NULL,
     atualizacao_funcionario TIMESTAMPTZ(0) DEFAULT NULL,
@@ -96,7 +95,7 @@ CREATE TABLE Documento (
     caminho_url TEXT NOT NULL,
     tipo_mime VARCHAR(100) NOT NULL,
     tamanho_bytes BIGINT NOT NULL,
-    hash_documento VARCHAR(255) NOT NULL,
+    hash_documento VARCHAR NOT NULL,
     descricao_documento TEXT NOT NULL,
     ativacao_documento TIMESTAMPTZ(0) DEFAULT NOW() NOT NULL,
     atualizacao_documento TIMESTAMPTZ(0) DEFAULT NULL,
@@ -113,6 +112,7 @@ CREATE TABLE Tipo_Certificado (
 );
 
 CREATE TABLE Endereco (
+    id_endereco SERIAL PRIMARY KEY,
     logradouro VARCHAR(50) NOT NULL,
     numero VARCHAR(10) NOT NULL,
     bairro VARCHAR(50) NOT NULL,
