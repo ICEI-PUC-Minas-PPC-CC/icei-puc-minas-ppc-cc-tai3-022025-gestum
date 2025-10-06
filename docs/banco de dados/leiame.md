@@ -1,0 +1,2 @@
+Os modelos foram projetados utilizando o software brModelo estão seguindo o padrão MySql, o que justifica a presença dos tipo 'enum' e da chave primaria estar como auto increment e integer.
+O código na pasta 'sgbd' está no padrão postgree, mas por conta da natureza da linguagem, o arquivo está salvo em .sql no repositório.
