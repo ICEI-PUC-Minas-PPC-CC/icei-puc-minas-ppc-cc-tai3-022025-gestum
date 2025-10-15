@@ -41,6 +41,8 @@ Pode incluir imagens, diagramas ou links para protótipos, vídeos, wireframes e
 - Justificativa:  
 
 ### 5️⃣ SWOT (Análise de Ambientes)
+[Ver pesquisa de mercado](docs/pesquisa_de_mercado.md)
+[Ver SWOT](docs/SWOT_Gestum.pdf)
 - Forças:  
 - Fraquezas:  
 - Oportunidades:  
