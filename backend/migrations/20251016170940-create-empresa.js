@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.STRING(50),
         allowNull: false
       },
-      CNPJ: {
+      cnpj: {
         type: Sequelize.CHAR(14),
         allowNull: false,
         unique: true

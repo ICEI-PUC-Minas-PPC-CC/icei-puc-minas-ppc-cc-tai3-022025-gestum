@@ -11,7 +11,7 @@ module.exports = {
         allowNull: false
       },
       senha_login: {
-        type: Sequelize.STRING(20),
+        type: Sequelize.STRING(100),
         allowNull: false
       }
     });
