@@ -58,9 +58,60 @@ Pode incluir imagens, diagramas ou links para protótipos, vídeos, wireframes e
 - Planilha ou print do fluxo projetado:  
 - Principais considerações:  
 
-### 8️⃣ Valuation
-- Método utilizado:  
-- Valor estimado:  
+# 📊 Valuation - Projeto Gestum
+[Ver Valuation](docs/valuation_Gestum.pdf)
+## 💡 Descrição Geral
+Este documento apresenta a **avaliação do valor do negócio (Valuation)** do projeto **Gestum**, elaborada com base nos dados de custos, despesas, precificação e projeções financeiras desenvolvidas nas etapas anteriores do Plano de Negócios.
+
+O objetivo é estimar o **valor econômico potencial do projeto**, demonstrando compreensão dos conceitos de **raciocínio econômico-financeiro** aplicados à proposta do grupo.
+
+---
+
+## 🧮 Metodologia Utilizada
+O grupo aplicou o método de **Fluxo de Caixa Descontado (FCD)**, por ser o mais adequado a startups e negócios SaaS.
+
+A metodologia considera:
+1. **Projeção dos fluxos de caixa futuros** (crescimento de clientes e receitas);
+2. **Taxa de desconto (12% a.a.)**, refletindo o risco do investimento;
+3. **Cálculo do valor presente líquido (VPL)** dos fluxos de caixa;
+4. **Cálculo do valor terminal (TV)**, representando o valor residual do negócio.
+
+---
+
+## 📈 Dados Utilizados
+| Parâmetro | Valor / Descrição |
+|------------|------------------|
+| Valor por cliente | R$ 300/mês |
+| Novos clientes | +1 cliente/mês |
+| Impostos | 6% sobre a receita |
+| Custos fixos | R$ 800/mês |
+| Marketing | R$ 300/mês |
+| Taxa de desconto (k) | 12% a.a. (≈ 0,95% a.m.) |
+| Crescimento longo prazo (g) | 2% a.m. |
+| Período de projeção | 5 meses |
+
+---
+
+## 💰 Resultados Obtidos
+- **Valor Presente Líquido (VPL):** –R$ 1.260  
+- **Valor Terminal (TV):** R$ 27.386  
+- **Enterprise Value (EV):** **R$ 26.126**
+
+📊 O resultado demonstra que o projeto **atinge o equilíbrio financeiro no quarto mês**, apresentando **potencial de crescimento e viabilidade econômica** a longo prazo, mesmo partindo de um fluxo inicial negativo.
+
+---
+
+## 📚 Referências
+- Slides da disciplina: *Trabalho Acadêmico Integrado III – Valuation* (Prof. Marcelo dos Reis, PUC Minas, 2025)  
+- SEBRAE. *Tudo o que você precisa saber sobre valuation.*  
+  [https://www.sebraeatende.com.br/artigo/tudo-o-que-voce-precisa-saber-sobre-valuation](https://www.sebraeatende.com.br/artigo/tudo-o-que-voce-precisa-saber-sobre-valuation)  
+- GITMAN, L. *Princípios de Administração Financeira*, 12ª edição, Pearson.  
+- DAMODARAN, A. *Investment Valuation*, 3rd Edition, Wiley Finance.  
+
+---
+
+## 📂 Estrutura de Entrega
+
 
 ### 9️⃣ Segurança Cibernética
 - Riscos identificados:  
