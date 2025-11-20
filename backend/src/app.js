@@ -5,6 +5,7 @@ const empresaRoutes = require("./routes/empresaRoutes");
 const planoRoutes = require("./routes/planoRoutes");
 const pessoaFisicaRoutes = require("./routes/pessoaFisicaRoutes");
 const funcionarioRoutes = require("./routes/funcionarioRoutes");
+const enderecoRoutes = require("./routes/enderecoRoutes");
 
 app.use(express.json());
 
@@ -13,6 +14,8 @@ app.use("/empresas", empresaRoutes);
 app.use("/planos", planoRoutes);
 app.use("/pessoas-fisicas", pessoaFisicaRoutes);
 app.use("/funcionarios", funcionarioRoutes);
+app.use("/enderecos", enderecoRoutes);
+
 
 // MIDDLEWARE GLOBAL DE ERRO (melhorado)
 app.use((err, req, res, next) => {
