@@ -2,10 +2,25 @@ export default (sequelize, DataTypes) => {
   const Plano = sequelize.define(
     "Plano",
     {
-      idPlano: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-      nome: { type: DataTypes.STRING, allowNull: false },
-      descricao: { type: DataTypes.TEXT, allowNull: true },
-      ativo: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true }
+      idPlano: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        field: "id_plano"
+      },
+      nome: { 
+        type: DataTypes.STRING, 
+        allowNull: false 
+      },
+      descricao: { 
+        type: DataTypes.TEXT, 
+        allowNull: true 
+      },
+      ativo: { 
+        type: DataTypes.BOOLEAN, 
+        allowNull: false, 
+        defaultValue: true 
+      }
     },
     {
       tableName: "plano",
@@ -17,7 +32,7 @@ export default (sequelize, DataTypes) => {
 
   Plano.associate = (models) => {
     Plano.hasMany(models.Empresa, {
-      foreignKey: "fk_plano_id_plano",
+      foreignKey: "fkPlanoIdPlano",  // 🔥 AQUI É O AJUSTE QUE RESOLVE TUDO
       as: "empresas"
     });
   };

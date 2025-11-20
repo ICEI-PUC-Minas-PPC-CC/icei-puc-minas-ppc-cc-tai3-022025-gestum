@@ -8,7 +8,7 @@ module.exports = {
 
     const admin = {
       campo_login: 'admin@helptech.com',
-      senha_login: senhaHash
+      senha_login: 'Admin@123'
     };
 
     await queryInterface.bulkInsert('login_cliente', [admin], {});

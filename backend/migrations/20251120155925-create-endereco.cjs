@@ -1,10 +1,10 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('endereco', {
+    await queryInterface.createTable("endereco", {
       id_endereco: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
       },
       logradouro: {
         type: Sequelize.STRING(50),
@@ -23,16 +23,10 @@ module.exports = {
         allowNull: false
       },
       estado: {
-        type: Sequelize.ENUM(
-          'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal',
-          'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul',
-          'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí',
-          'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia',
-          'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'
-        ),
+        type: Sequelize.STRING(30),
         allowNull: false
       },
-      CEP: {
+      cep: {
         type: Sequelize.CHAR(8),
         allowNull: false
       },
@@ -44,10 +38,11 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
+
       ativacao_endereco: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('NOW()')
+        defaultValue: Sequelize.literal("NOW()")
       },
       atualizacao_endereco: {
         type: Sequelize.DATE,
@@ -57,22 +52,47 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: true
       },
+
       fk_empresa_id_empresa: {
         type: Sequelize.INTEGER,
         allowNull: true,
-        references: { model: 'empresa', key: 'id_empresa' },
-        onDelete: 'RESTRICT'
+        references: {
+          model: "empresa",
+          key: "id_empresa"
+        },
+        onDelete: "RESTRICT",
+        onUpdate: "CASCADE"
       },
+
       fk_pessoa_fisica_id_pessoa_fisica: {
         type: Sequelize.INTEGER,
         allowNull: true,
-        references: { model: 'pessoa_fisica', key: 'id_pessoa_fisica' },
-        onDelete: 'RESTRICT'
+        references: {
+          model: "pessoa_fisica",
+          key: "id_pessoa_fisica"
+        },
+        onDelete: "RESTRICT",
+        onUpdate: "CASCADE"
+      },
+
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      deleted_at: {
+        type: Sequelize.DATE,
+        allowNull: true
       }
     });
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('endereco');
+    await queryInterface.dropTable("endereco");
   }
 };

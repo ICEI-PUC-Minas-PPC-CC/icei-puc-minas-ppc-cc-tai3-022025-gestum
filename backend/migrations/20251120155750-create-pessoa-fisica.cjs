@@ -1,24 +1,24 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('pessoa_fisica', {
+    await queryInterface.createTable("pessoa_fisica", {
       id_pessoa_fisica: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
       },
       nome_pessoa_fisica: {
         type: Sequelize.STRING(50),
         allowNull: false
       },
-      CPF: {
+      cpf: {
         type: Sequelize.CHAR(11),
-        unique: true,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       ativacao_pessoa_fisica: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('NOW()')
+        defaultValue: Sequelize.literal("NOW()")
       },
       atualizacao_pessoa_fisica: {
         type: Sequelize.DATE,
@@ -36,15 +36,36 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: true
       },
+
       fk_empresa_id_empresa: {
         type: Sequelize.INTEGER,
-        references: { model: 'empresa', key: 'id_empresa' },
-        onDelete: 'CASCADE'
+        allowNull: false,
+        references: {
+          model: "empresa",
+          key: "id_empresa"
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE"
+      },
+
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      deleted_at: {
+        type: Sequelize.DATE,
+        allowNull: true
       }
     });
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('pessoa_fisica');
+    await queryInterface.dropTable("pessoa_fisica");
   }
 };

@@ -1,13 +1,13 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('plano', {
+    await queryInterface.createTable("plano", {
       id_plano: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
       },
       tipo_plano: {
-        type: Sequelize.ENUM('Gratuito', 'Trial', 'Básico', 'Silver', 'Gold', 'Diamond'),
+        type: Sequelize.STRING,
         allowNull: false
       },
       valor_plano: {
@@ -17,12 +17,12 @@ module.exports = {
       inicio_plano: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('NOW()')
+        defaultValue: Sequelize.literal("NOW()")
       },
       termino_plano: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('NOW()')
+        defaultValue: Sequelize.literal("NOW()")
       },
       status_plano: {
         type: Sequelize.BOOLEAN,
@@ -31,11 +31,26 @@ module.exports = {
       descricao_plano: {
         type: Sequelize.TEXT,
         allowNull: false
+      },
+
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      deleted_at: {
+        type: Sequelize.DATE,
+        allowNull: true
       }
     });
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('plano');
+    await queryInterface.dropTable("plano");
   }
 };

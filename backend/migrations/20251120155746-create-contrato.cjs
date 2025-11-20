@@ -1,10 +1,10 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('contrato', {
+    await queryInterface.createTable("contrato", {
       id_contrato: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
       },
       titulo_contrato: {
         type: Sequelize.STRING(100),
@@ -15,16 +15,16 @@ module.exports = {
         allowNull: false
       },
       data_inicio: {
-        type: Sequelize.DATEONLY,
+        type: Sequelize.DATE,
         allowNull: false
       },
       ativacao_contrato: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('NOW()')
+        defaultValue: Sequelize.literal("NOW()")
       },
       data_fim: {
-        type: Sequelize.DATEONLY,
+        type: Sequelize.DATE,
         allowNull: false
       },
       atualizacao_contrato: {
@@ -42,11 +42,26 @@ module.exports = {
       descricacao_contrato: {
         type: Sequelize.TEXT,
         allowNull: true
+      },
+
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      deleted_at: {
+        type: Sequelize.DATE,
+        allowNull: true
       }
     });
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('contrato');
+    await queryInterface.dropTable("contrato");
   }
 };
