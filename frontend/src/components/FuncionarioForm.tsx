@@ -28,6 +28,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import api from "@/lib/api";
 
 const funcionarioSchema = z.object({
   nome: z.string().min(1, "Nome é obrigatório").max(50),
@@ -57,15 +58,24 @@ export function FuncionarioForm({ open, onOpenChange }: FuncionarioFormProps) {
     },
   });
 
-  function onSubmit(data: FuncionarioFormValues) {
-    console.log(data);
-    toast({
-      title: "Funcionário cadastrado com sucesso!",
-      description: `${data.nome} foi adicionado ao sistema.`,
-    });
-    form.reset();
-    onOpenChange(false);
-  }
+  const onSubmit = async (data: FuncionarioFormValues) => {
+    try {
+      const response = await api.post("/funcionarios", data);
+      console.log("Funcionário criado:", response.data);
+      toast({
+        title: "Funcionário adicionado!",
+        description: "O funcionário foi criado com sucesso.",
+      });
+      form.reset();
+      onOpenChange(false);
+    } catch (error) {
+      toast({
+        title: "Erro ao criar funcionário!",
+        description: "Ocorreu um erro ao criar o funcionário.",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

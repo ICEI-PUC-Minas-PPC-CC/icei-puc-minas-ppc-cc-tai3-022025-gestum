@@ -28,6 +28,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import api from "@/lib/api";
 
 const empresaSchema = z.object({
   razaoSocial: z.string().min(1, "Razão social é obrigatória").max(50),
@@ -59,15 +60,24 @@ export function EmpresaForm({ open, onOpenChange }: EmpresaFormProps) {
     },
   });
 
-  function onSubmit(data: EmpresaFormValues) {
-    console.log(data);
-    toast({
-      title: "Empresa cadastrada com sucesso!",
-      description: `${data.nomeFantasia} foi adicionada ao sistema.`,
-    });
-    form.reset();
-    onOpenChange(false);
-  }
+  const onSubmit = async (data: EmpresaFormValues) => {
+    try {
+      const response = await api.post("/empresas", data);
+      console.log("Empresa criada:", response.data);
+      toast({
+        title: "Empresa adicionada!",
+        description: "A empresa foi criada com sucesso.",
+      });
+      form.reset();
+      onOpenChange(false);
+    } catch (error) {
+      toast({
+        title: "Erro ao criar empresa!",
+        description: "Ocorreu um erro ao criar a empresa.",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
