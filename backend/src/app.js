@@ -8,6 +8,8 @@ const funcionarioRoutes = require("./routes/funcionarioRoutes");
 const enderecoRoutes = require("./routes/enderecoRoutes");
 const contatosRoutes = require("./routes/contatosRoutes");
 const contratoRoutes = require("./routes/contratoRoutes");
+const certificadoRoutes = require("./routes/certificadoRoutes");
+
 
 
 
@@ -21,7 +23,7 @@ app.use("/funcionarios", funcionarioRoutes);
 app.use("/enderecos", enderecoRoutes);
 app.use("/contatos", contatosRoutes);
 app.use("/contratos", contratoRoutes);
-
+app.use("/certificados", certificadoRoutes);
 
 // MIDDLEWARE GLOBAL DE ERRO (melhorado)
 app.use((err, req, res, next) => {
