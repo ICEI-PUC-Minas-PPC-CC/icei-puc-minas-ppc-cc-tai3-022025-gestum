@@ -11,7 +11,7 @@ const contratoRoutes = require("./routes/contratoRoutes");
 const certificadoRoutes = require("./routes/certificadoRoutes");
 const tipoCertificadoRoutes = require("./routes/tipoCertificadoRoutes");
 const certificadoTipoRoutes = require("./routes/certificadoTipoRoutes");
-
+const pessoaCertificadoRoutes = require("./routes/pessoaCertificadoRoutes");
 
 
 app.use(express.json());
@@ -27,6 +27,7 @@ app.use("/contratos", contratoRoutes);
 app.use("/certificados", certificadoRoutes);
 app.use("/tipos-certificados", tipoCertificadoRoutes);
 app.use("/certificados-tipos", certificadoTipoRoutes);
+app.use("/pessoa-certificados", pessoaCertificadoRoutes);
 
 
 
