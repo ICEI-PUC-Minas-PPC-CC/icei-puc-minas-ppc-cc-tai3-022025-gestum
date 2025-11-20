@@ -8,18 +8,41 @@ export default (sequelize, DataTypes) => {
         autoIncrement: true,
         field: "id_plano"
       },
-      nome: { 
-        type: DataTypes.STRING, 
-        allowNull: false 
+
+      tipoPlano: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        field: "tipo_plano"
       },
-      descricao: { 
-        type: DataTypes.TEXT, 
-        allowNull: true 
+
+      valorPlano: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: "valor_plano"
       },
-      ativo: { 
-        type: DataTypes.BOOLEAN, 
-        allowNull: false, 
-        defaultValue: true 
+
+      inicioPlano: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        field: "inicio_plano"
+      },
+
+      terminoPlano: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        field: "termino_plano"
+      },
+
+      statusPlano: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        field: "status_plano"
+      },
+
+      descricaoPlano: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        field: "descricao_plano"
       }
     },
     {
@@ -32,7 +55,7 @@ export default (sequelize, DataTypes) => {
 
   Plano.associate = (models) => {
     Plano.hasMany(models.Empresa, {
-      foreignKey: "fkPlanoIdPlano",  // 🔥 AQUI É O AJUSTE QUE RESOLVE TUDO
+      foreignKey: "fkPlanoIdPlano", // nome do atributo do model Empresa
       as: "empresas"
     });
   };
