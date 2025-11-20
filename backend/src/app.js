@@ -12,6 +12,8 @@ const certificadoRoutes = require("./routes/certificadoRoutes");
 const tipoCertificadoRoutes = require("./routes/tipoCertificadoRoutes");
 const certificadoTipoRoutes = require("./routes/certificadoTipoRoutes");
 const pessoaCertificadoRoutes = require("./routes/pessoaCertificadoRoutes");
+const empresaCertificadoRoutes = require("./routes/empresaCertificadoRoutes");
+
 
 
 app.use(express.json());
@@ -28,7 +30,7 @@ app.use("/certificados", certificadoRoutes);
 app.use("/tipos-certificados", tipoCertificadoRoutes);
 app.use("/certificados-tipos", certificadoTipoRoutes);
 app.use("/pessoa-certificados", pessoaCertificadoRoutes);
-
+app.use("/empresa-certificados", empresaCertificadoRoutes);
 
 
 // MIDDLEWARE GLOBAL DE ERRO (melhorado)
