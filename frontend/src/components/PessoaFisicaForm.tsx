@@ -28,6 +28,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import api from "@/lib/api";
 
 const pessoaFisicaSchema = z.object({
   nome: z.string().min(1, "Nome é obrigatório").max(50),
@@ -55,15 +56,24 @@ export function PessoaFisicaForm({ open, onOpenChange }: PessoaFisicaFormProps) 
     },
   });
 
-  function onSubmit(data: PessoaFisicaFormValues) {
-    console.log(data);
-    toast({
-      title: "Pessoa cadastrada com sucesso!",
-      description: `${data.nome} foi adicionada ao sistema.`,
-    });
-    form.reset();
-    onOpenChange(false);
-  }
+  const onSubmit = async (data: PessoaFisicaFormValues) => {
+    try {
+      const response = await api.post("/pessoas-fisicas", data);
+      console.log("Pessoa física criada:", response.data);
+      toast({
+        title: "Pessoa física adicionada!",
+        description: "A pessoa física foi criada com sucesso.",
+      });
+      form.reset();
+      onOpenChange(false);
+    } catch (error) {
+      toast({
+        title: "Erro ao criar pessoa física!",
+        description: "Ocorreu um erro ao criar a pessoa física.",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

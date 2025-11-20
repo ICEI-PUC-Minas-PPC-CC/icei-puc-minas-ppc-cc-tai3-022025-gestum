@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
+import api from "@/lib/api";
 
 const contratoSchema = z.object({
   titulo: z.string().min(5, "Título deve ter no mínimo 5 caracteres"),
@@ -64,14 +65,24 @@ export function ContratoForm({ open, onOpenChange }: ContratoFormProps) {
     },
   });
 
-  const onSubmit = (data: ContratoFormValues) => {
-    console.log("Contrato criado:", data);
-    toast({
-      title: "Contrato adicionado!",
-      description: "O contrato foi criado com sucesso.",
-    });
-    form.reset();
-    onOpenChange(false);
+  const onSubmit = async (data: ContratoFormValues) => {
+    try {
+      const response = await api.post("/contratos", data);
+      console.log("Contrato criado:", response.data);
+      toast({
+        title: "Contrato adicionado!",
+        description: "O contrato foi criado com sucesso.",
+      });
+      form.reset();
+      onOpenChange(false);
+    } catch (error) {
+      toast({
+        title: "Erro ao criar contrato!",
+        description: "Ocorreu um erro ao criar o contrato.",
+        variant: "destructive",
+      });
+    }
+
   };
 
   return (

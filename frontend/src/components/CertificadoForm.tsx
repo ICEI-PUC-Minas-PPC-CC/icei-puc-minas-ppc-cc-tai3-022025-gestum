@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
+import api from "@/lib/api";
 
 const certificadoSchema = z.object({
   nome: z.string().min(5, "Nome deve ter no mínimo 5 caracteres"),
@@ -64,14 +65,23 @@ export function CertificadoForm({ open, onOpenChange }: CertificadoFormProps) {
     },
   });
 
-  const onSubmit = (data: CertificadoFormValues) => {
-    console.log("Certificado criado:", data);
-    toast({
-      title: "Certificado adicionado!",
-      description: "O certificado foi criado com sucesso.",
-    });
-    form.reset();
-    onOpenChange(false);
+  const onSubmit = async (data: CertificadoFormValues) => {
+    try {
+      const response = await api.post("/certificados", data);
+      console.log("Certificado criado:", response.data);
+      toast({
+        title: "Certificado adicionado!",
+        description: "O certificado foi criado com sucesso.",
+      });
+      form.reset();
+      onOpenChange(false);
+    } catch (error) {
+      toast({
+        title: "Erro ao criar certificado!",
+        description: "Ocorreu um erro ao criar o certificado.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
