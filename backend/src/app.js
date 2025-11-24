@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 const empresaRoutes = require("./routes/empresaRoutes");
 const planoRoutes = require("./routes/planoRoutes");
@@ -16,7 +17,11 @@ const empresaCertificadoRoutes = require("./routes/empresaCertificadoRoutes");
 const documentoRoutes = require("./routes/documentoRoutes");
 
 
-
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 app.use(express.json());
 
